@@ -3,11 +3,13 @@
 import About from '@/components/About';
 import Explore from '@/components/Explore';
 import Hero from '@/components/Hero';
+import Menu from '@/components/Menu';
 import LocomotiveScroll from 'locomotive-scroll';
 import React, { useEffect } from 'react';
 
 const Home = () => {
   //add locomotive scroll
+
   useEffect(() => {
     const loadLocomotiveScroll = async () => {
       const LocomotiveScroll = (await import('locomotive-scroll')).default;
@@ -22,6 +24,7 @@ const Home = () => {
       <Hero />
       <Explore />
       <About />
+      <Menu />
       {/* temporary div */}
       <div className='h-[4000px]'></div>
     </div>

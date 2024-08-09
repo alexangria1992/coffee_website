@@ -1,7 +1,7 @@
 'use client';
-import React, { useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import Badge from './Badge';
 import Seperator from './Seperator';
@@ -26,13 +26,16 @@ const data = [
       'At Zenbrew, our dedicated team is behind every great cup. Our skilled baristas and expert roasters work with passion and precision, making each coffee experience special. Meet the people who bring creativity and care to every cup and learn their unique stories.',
   },
 ];
+
 const About = () => {
-  const scrollableSelectionRef = useRef(null);
+  const scrollableSectionRef = useRef(null);
   const scrollTriggerRef = useRef(null);
+
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
     const animation = gsap.fromTo(
-      scrollableSelectionRef.current,
+      scrollableSectionRef.current,
       { translateX: 0 },
       {
         translateX: '-200vw',
@@ -47,28 +50,31 @@ const About = () => {
         },
       }
     );
+
     return () => {
       animation.kill();
     };
   }, []);
+
   return (
     <section className='overflow-hidden bg-primary'>
       <div ref={scrollTriggerRef}>
         <div
-          ref={scrollableSelectionRef}
+          ref={scrollableSectionRef}
           className='h-screen w-[300vw] flex relative'
         >
           {data.map((item, index) => {
             return (
               <div
                 key={index}
-                className='w-screen border border-purple-800 h-screen flex flex-col justify-center items-center relative'
+                className='w-screen h-screen flex flex-col justify-center items-center relative'
               >
-                <div className='container mx-auto border '>
-                  <div className='flex gap-[30px] relative border border-yellow-300'>
-                    <div className=' flex border border-pink-300  flex-col justify-center items-center'>
+                <div className='container mx-auto'>
+                  <div className='flex gap-[30px] relative'>
+                    {/* text */}
+                    <div className='flex-1 flex flex-col justify-center items-center'>
                       <Badge containerStyles='w-[180px] h-[180px]' />
-                      <div className='border border-cyan-300 max-w-[560px] text-center'>
+                      <div className='max-w-[560px] text-center'>
                         {/* title */}
                         <h2 className='h2 text-white mb-4'>
                           <span className='mr-4'>
@@ -78,7 +84,7 @@ const About = () => {
                             {item.title.split(' ')[1]}
                           </span>
                         </h2>
-                        {/* seperator */}
+                        {/* separator */}
                         <div className='mb-8'>
                           <Seperator />
                         </div>
@@ -86,19 +92,19 @@ const About = () => {
                         <p className='leading-relaxed mb-16 px-8 xl:px-0'>
                           {item.description}
                         </p>
-                        {/* button */}
+                        {/* btn */}
                         <button className='btn'>See more</button>
                       </div>
                     </div>
                     {/* image */}
-                    <div className='hidden xl:flex flex-1 w-full  h-[70vh] relative'>
+                    <div className='hidden xl:flex flex-1 w-full h-[70vh] relative'>
                       <Image
                         src={item.imgSrc}
+                        fill
                         className='object-cover'
                         quality={100}
                         priority
                         alt=''
-                        fill
                       />
                     </div>
                   </div>
