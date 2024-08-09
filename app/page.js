@@ -1,5 +1,6 @@
 'use client';
 
+import About from '@/components/About';
 import Explore from '@/components/Explore';
 import Hero from '@/components/Hero';
 import LocomotiveScroll from 'locomotive-scroll';
@@ -20,6 +21,7 @@ const Home = () => {
     <div className='h-full overflow-x-hidden'>
       <Hero />
       <Explore />
+      <About />
       {/* temporary div */}
       <div className='h-[4000px]'></div>
     </div>

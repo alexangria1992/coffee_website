@@ -14,7 +14,7 @@ const Explore = () => {
               <div className='xl:max-w-[420px] xl:text-right xl:flex xl:flex-col xl:items-end'>
                 <div className='mb-6 flex justify-center items-center'>
                   <Image
-                    src='/assets/explore/coffees/coffee-1.svg'
+                    src='/assets/explore/icons/coffee-1.svg'
                     width={56}
                     height={56}
                   />
@@ -34,7 +34,7 @@ const Explore = () => {
               <div className='xl:max-w-[420px] xl:text-right xl:flex xl:flex-col xl:items-end'>
                 <div className='mb-6 flex justify-center items-center'>
                   <Image
-                    src='/assets/explore/coffees/coffee-2.svg'
+                    src='/assets/explore/icons/coffee-2.svg'
                     width={56}
                     height={56}
                   />
@@ -75,7 +75,7 @@ const Explore = () => {
               <div className='xl:max-w-[420px] xl:text-left xl:flex xl:flex-col xl:items-start'>
                 <div className='mb-6 flex justify-center items-center'>
                   <Image
-                    src='/assets/explore/coffees/coffee-3.svg'
+                    src='/assets/explore/icons/coffee-3.svg'
                     width={56}
                     height={56}
                   />
@@ -95,7 +95,7 @@ const Explore = () => {
               <div className='xl:max-w-[420px] xl:text-left xl:flex xl:flex-col xl:items-start'>
                 <div className='mb-6 flex justify-center items-center'>
                   <Image
-                    src='/assets/explore/coffees/coffee-4.svg'
+                    src='/assets/explore/icons/coffee-4.svg'
                     width={56}
                     height={56}
                   />
